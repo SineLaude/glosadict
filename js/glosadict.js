@@ -111,7 +111,7 @@ function searchNat(entry) {
 
 function prettify(text) {
 	text = text.replace(/X<\/b>(?!-)/g, ' </b><span class="nounderline tooltip" data-info=" = avoid this form">❌</span>');
-	text = text.replace(/X(?!<\/b>-)/g, ' <span class="tooltip" data-info=" = avoid this form">❌</span>');
+	text = text.replace(/X(?!<\/b>-)/g, ' <span class="nounderline tooltip" data-info=" = avoid this form">❌</span>');
 	text = text.replace(/(?<!\w)1(?!\d)/g, ' <span class="tooltip" data-info=" = Glosa 1000">1k</span>');
 	text = text.replace(/(?<!\w)G(?!\w)/g, ' <span class="nounderline tooltip" data-info=" = Greek word">🇬🇷</span>');
 	text = text.replace(/\+\+/g, ' <span class="tooltip" data-info=" = Centra Glosa">C</span>');
