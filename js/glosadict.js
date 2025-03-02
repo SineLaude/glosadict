@@ -110,11 +110,13 @@ function searchNat(entry) {
 }
 
 function prettify(text) {
-	text = text.replace(/X(?!-)/g, ' <abbr title="This word should be avoided; use the form in parentheses instead.">❌</abbr>');
-	text = text.replace(/ 1/g, ' <abbr title="Glosa 1000"> 1</abbr>');
-	text = text.replace(/\+\+/g, ' <abbr title="Centra Glosa"> C</abbr>');
-	text = text.replace(/\+/g, ' <abbr title="Basi Glosa"> B</abbr>');
-	text = text.replace(/(?<!\w)G(?!\w)/g, ' <abbr title="Greek word">🇬🇷</abbr>');
+	text = text.replace(/X<\/b>(?!-)/g, ' </b><span class="nounderline tooltip" data-info=" = avoid this form">❌</span>');
+	text = text.replace(/X(?!<\/b>-)/g, ' <span class="tooltip" data-info=" = avoid this form">❌</span>');
+	text = text.replace(/(?<!\w)1(?!\d)/g, ' <span class="tooltip" data-info=" = Glosa 1000">1k</span>');
+	text = text.replace(/(?<!\w)G(?!\w)/g, ' <span class="nounderline tooltip" data-info=" = Greek word">🇬🇷</span>');
+	text = text.replace(/\+\+/g, ' <span class="tooltip" data-info=" = Centra Glosa">C</span>');
+	text = text.replace(/\+<\/b>\+/g, ' <span class="tooltip" data-info=" = Centra Glosa">C</span></b>');
+	text = text.replace(/\+/g, ' <span class="tooltip" data-info=" = Basi Glosa">B</span>');
 	text = text.replace(/{/g, "<i>{");
 	text = text.replace(/}/g, "}</i>");
 	return text;
@@ -159,7 +161,7 @@ function doSearch(history) {
 					});
 					entries.forEach(function(e) {
 						e.forEach(function(r) {
-							$(tables[i]).append("<tr><td>" + prettify(r[i]).replace(re, "$1<b>$2</b>$3") + "</td><td>" + prettify(r[1-i]) + "</td></tr>");
+							$(tables[i]).append("<tr><td>" + prettify(r[i].replace(re, "$1<b>$2</b>$3")) + "</td><td>" + prettify(r[1-i]) + "</td></tr>");
 						});
 					});
 					$(tables[i]).show();

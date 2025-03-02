@@ -10,9 +10,18 @@ body {
 	color: black;
 }
 
-abbr {
+.tooltip {
 	font-size: small;
 	color: var(--accent);
+	cursor: help;
+}
+
+.tooltip:not(.nounderline) {
+	text-decoration: underline dotted;
+}
+
+.tooltip:hover::after {
+	content: attr(data-info);
 }
 
 #gd_title {
