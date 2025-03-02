@@ -6,7 +6,7 @@ This is a user-friendly interface for searching Glosa dictionary data. Glosa is 
 
 Note that the contents of the `data` and `img` directories are not covered by this repository's global `LICENSE` file.
 
-The dictionary data is used with kind permission from Marcel Springer ([http://www.glosa.org](glosa.org)).
+The dictionary data is used with kind permission from Marcel Springer ([glosa.org](http://www.glosa.org)).
 
 ## Libraries Used
 
