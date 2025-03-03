@@ -117,6 +117,7 @@ function prettify(text) {
 	text = text.replace(/\+\+/g, ' <span class="tooltip" data-info=" = Centra Glosa">C</span>');
 	text = text.replace(/\+<\/b>\+/g, ' <span class="tooltip" data-info=" = Centra Glosa">C</span></b>');
 	text = text.replace(/\+/g, ' <span class="tooltip" data-info=" = Basi Glosa">B</span>');
+	text = text.replace(/\*/g, ' <span class="tooltip" data-info=" = non-GEO or modified word">*</span>');
 	text = text.replace(/{/g, "<i>{");
 	text = text.replace(/}/g, "}</i>");
 	return text;
