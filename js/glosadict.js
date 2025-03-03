@@ -110,17 +110,16 @@ function searchNat(entry) {
 }
 
 function prettify(text) {
-	text = text.replace(/X<\/b>(?!-)/g, ' </b><span class="nounderline tooltip" data-info=" = avoid this form">❌</span>');
-	text = text.replace(/X(?!<\/b>-)/g, ' <span class="nounderline tooltip" data-info=" = avoid this form">❌</span>');
-	text = text.replace(/(?<!\w)1(?!\d)/g, ' <span class="tooltip" data-info=" = Glosa 1000">1k</span>');
-	text = text.replace(/(?<!\w)G(?!\w)/g, ' <span class="nounderline tooltip" data-info=" = Greek word">🇬🇷</span>');
-	text = text.replace(/\+\+/g, ' <span class="tooltip" data-info=" = Centra Glosa">C</span>');
-	text = text.replace(/\+<\/b>\+/g, ' <span class="tooltip" data-info=" = Centra Glosa">C</span></b>');
-	text = text.replace(/\+/g, ' <span class="tooltip" data-info=" = Basi Glosa">B</span>');
-	text = text.replace(/\*/g, ' <span class="tooltip" data-info=" = non-GEO or modified word">*</span>');
-	text = text.replace(/{/g, "<i>{");
-	text = text.replace(/}/g, "}</i>");
-	return text;
+	return text.replace(/X<\/b>(?!-)/g, ' </b><span class="nounderline tooltip" data-info=" = avoid this form">❌</span>')
+		.replace(/X(?!<\/b>-)/g, ' <span class="nounderline tooltip" data-info=" = avoid this form">❌</span>')
+		.replace(/(?<!\w)1(?!\d)/g, ' <span class="tooltip" data-info=" = Glosa 1000">1k</span>')
+		.replace(/(?<!\w)G(?!\w)/g, ' <span class="nounderline tooltip" data-info=" = Greek word">🇬🇷</span>')
+		.replace(/\+\+/g, ' <span class="tooltip" data-info=" = Centra Glosa">C</span>')
+		.replace(/\+<\/b>\+/g, ' <span class="tooltip" data-info=" = Centra Glosa">C</span></b>')
+		.replace(/\+/g, ' <span class="tooltip" data-info=" = Basi Glosa">B</span>')
+		.replace(/\*/g, ' <span class="tooltip" data-info=" = non-GEO or modified word">*</span>')
+		.replace(/{/g, "<i>{")
+		.replace(/}/g, "}</i>");
 }
 
 function doSearch(history) {
